@@ -1,6 +1,12 @@
 # My-ai-wp-bot
 
-Telegram bot + Gemini AI that does GitHub work for you.
-Runs on GitHub Actions (poll.yml). Changes always go to a new branch + Pull Request, so nothing is merged without your approval.
+Telegram AI chat bot.
 
-Secrets needed (Settings > Secrets > Actions): TELEGRAM_BOT_TOKEN, GEMINI_API_KEY, GH_PAT, ALLOWED_CHAT_ID
+## Run
+
+```
+pip install -r requirements.txt
+export TELEGRAM_BOT_TOKEN=...   # from @BotFather
+export LLM_API_KEY=...
+python bot.py
+```
