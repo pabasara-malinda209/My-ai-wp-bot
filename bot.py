@@ -30,6 +30,8 @@ def ask(messages):
 
 def allowed(update):
     uid = str(update.effective_user.id)
+    if os.environ.get("OWNER_ID"):
+        return os.environ["OWNER_ID"].strip() == uid
     if not os.path.exists(OWNER_FILE):
         open(OWNER_FILE, "w").write(uid)
     return open(OWNER_FILE).read().strip() == uid
