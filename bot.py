@@ -4,7 +4,7 @@ TG = os.environ['TELEGRAM_BOT_TOKEN']
 GEM = os.environ['GEMINI_API_KEY']
 GH = os.environ['GH_PAT']
 ALLOWED = os.environ.get('ALLOWED_CHAT_ID', '').strip()
-MODEL = 'gemini-2.5-flash'
+MODEL = 'gemini-3.8-flash'
 GHH = {'Authorization': 'Bearer ' + GH, 'Accept': 'application/vnd.github+json'}
 API = 'https://api.github.com'
 
