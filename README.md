@@ -1,12 +1,9 @@
 # My-ai-wp-bot
 
-Telegram AI chat bot.
+Telegram AI bot that chats and edits GitHub files.
 
-## Run
+Commands: /start, /repo owner/name, /files, /read path, /edit path instruction, /new path instruction
 
-```
-pip install -r requirements.txt
-export TELEGRAM_BOT_TOKEN=...   # from @BotFather
-export LLM_API_KEY=...
-python bot.py
-```
+Env vars: TELEGRAM_BOT_TOKEN, LLM_API_KEY, GITHUB_TOKEN, optional LLM_BASE_URL, LLM_MODEL
+
+Run: pip install -r requirements.txt && python bot.py
