@@ -1,0 +1,15 @@
+{
+  "name": "My-ai-wp-bot",
+  "description": "Telegram AI bot that chats and edits GitHub files",
+  "repository": "https://github.com/pabasara-malinda209/My-ai-wp-bot",
+  "env": {
+    "TELEGRAM_BOT_TOKEN": {"description": "Bot token from @BotFather"},
+    "LLM_API_KEY": {"description": "Gemini API key from aistudio.google.com/apikey"},
+    "GITHUB_TOKEN": {"description": "GitHub personal access token (repo scope)"},
+    "OWNER_ID": {"description": "Your Telegram user id (get it from @userinfobot)"},
+    "LLM_BASE_URL": {"value": "https://generativelanguage.googleapis.com/v1beta/openai/"},
+    "LLM_MODEL": {"value": "gemini-3.1-flash-lite"}
+  },
+  "formation": {"worker": {"quantity": 1, "size": "eco"}},
+  "buildpacks": [{"url": "heroku/python"}]
+}
