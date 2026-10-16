@@ -120,6 +120,18 @@ async def chat(u, c):
     await u.message.reply_text(a)
 
 
+def keepalive():
+    import threading
+    from http.server import BaseHTTPRequestHandler, HTTPServer
+    class H(BaseHTTPRequestHandler):
+        def do_GET(self):
+            self.send_response(200); self.end_headers(); self.wfile.write(b"ok")
+        def log_message(self, *a): pass
+    port = int(os.environ.get("PORT", 10000))
+    threading.Thread(target=HTTPServer(("0.0.0.0", port), H).serve_forever, daemon=True).start()
+
+
+keepalive()
 app = ApplicationBuilder().token(TOKEN).build()
 for n, f in [("start", start), ("help", start), ("repo", repo), ("files", files), ("read", read), ("edit", edit), ("new", new)]:
     app.add_handler(CommandHandler(n, f))
