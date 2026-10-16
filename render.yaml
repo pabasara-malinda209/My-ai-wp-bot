@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: my-ai-wp-bot
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python bot.py
+    envVars:
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false
+      - key: LLM_API_KEY
+        sync: false
+      - key: GITHUB_TOKEN
+        sync: false
+      - key: OWNER_ID
+        sync: false
+      - key: LLM_BASE_URL
+        value: https://generativelanguage.googleapis.com/v1beta/openai/
+      - key: LLM_MODEL
+        value: gemini-3.1-flash-lite
+      - key: PYTHON_VERSION
+        value: 3.11.9
